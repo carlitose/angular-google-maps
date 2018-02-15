@@ -42,7 +42,7 @@ export class PolygonManager {
   setPolygonOptions(path: AgmPolygon, options: {[propName: string]: any}): Promise<void> {
     return this._polygons.get(path).then((l: Polygon) => { l.setOptions(options); });
   }
-  getPolygonPoints(): Promise<Array<any>> {
+  getPolygonPath(): Promise<Array<any>> {
        // get the first path's coordinates as array
         return this._polygons.values().next().value.then((polygon: any) => {
             return polygon.getPath().getArray();
